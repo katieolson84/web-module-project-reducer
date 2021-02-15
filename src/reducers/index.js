@@ -2,7 +2,7 @@ import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION } from './../actions';
 
 export const initialState = {
     total: 100,
-    operation: "*",
+    operation: "+",
     memory: 100
 }
 
@@ -14,6 +14,7 @@ const calculateResult = (num1, num2, operation) => {
             return num1 * num2;
         case("-"):
             return num1 - num2;
+        default: return initialState.operation;
     }
 }
 
@@ -40,6 +41,7 @@ const reducer = (state, action) => {
         default:
             return state;
     }
+    
 }
 
 export default reducer;
